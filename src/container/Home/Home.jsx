@@ -1,8 +1,21 @@
 import React from "react";
-import YoutubeComp from "../../component/YoutubeComp/YoutubeComp";
-import Product from "../Product/Product";
+// import YoutubeComp from "../../component/YoutubeComp/YoutubeComp";
+// import Product from "../Product/Product";
+import LifeCycle from "../LifeCycleComp/LifeCycleComp";
 
 class Home extends React.Component {
+  state = {
+    showComponent: true,
+  };
+
+  // componentDidMount() {
+  //   setTimeout(() => {
+  //     this.setState({
+  //       showComponent: false,
+  //     });
+  //   }, 5000);
+  // }
+
   render() {
     return (
       <div className="flex-col">
@@ -23,7 +36,7 @@ class Home extends React.Component {
 
         <hr /> */}
 
-        <Product />
+        {this.state.showComponent ? <LifeCycle /> : null}
       </div>
     );
   }
