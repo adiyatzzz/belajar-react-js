@@ -1,11 +1,12 @@
 import React from "react";
 import YoutubeComp from "../../component/YoutubeComp/YoutubeComp";
+import Product from "../Product/Product";
 
 class Home extends React.Component {
   render() {
     return (
       <div className="flex-col">
-        <h2>Youtube Video</h2>
+        {/* <h2>Youtube Video</h2>
         <hr />
         <YoutubeComp
           title="Utuh Hamuk"
@@ -19,6 +20,10 @@ class Home extends React.Component {
           desc="Utuh lagi liar liar nya"
         />
         <YoutubeComp time="12.12" title="Utuh Liut" desc="Utuh lagi lamas" />
+
+        <hr /> */}
+
+        <Product />
       </div>
     );
   }
