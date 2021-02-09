@@ -2,6 +2,7 @@ import React from "react";
 // import YoutubeComp from "../../component/YoutubeComp/YoutubeComp";
 // import Product from "../Product/Product";
 import LifeCycle from "../LifeCycleComp/LifeCycleComp";
+import BlogPost from "../BlogPost/BlogPost";
 
 class Home extends React.Component {
   state = {
@@ -34,9 +35,11 @@ class Home extends React.Component {
         />
         <YoutubeComp time="12.12" title="Utuh Liut" desc="Utuh lagi lamas" />
 
-        <hr /> */}
+        <hr /> 
 
         {this.state.showComponent ? <LifeCycle /> : null}
+        */}
+        <BlogPost />
       </div>
     );
   }
