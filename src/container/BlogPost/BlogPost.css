@@ -2,6 +2,9 @@
   width: 80%;
   margin: 0 auto;
 }
+
+/* Blog */
+
 .heading-title {
   font-size: 24px;
   color: rgb(71, 68, 68);
@@ -23,6 +26,7 @@
 
 .content {
   margin-left: 20px;
+  word-break: break-all;
 }
 
 .title {
@@ -38,6 +42,8 @@
   line-height: 20px;
   color: rgb(146, 146, 146);
 }
+
+/* remove btn */
 
 .remove-btn {
   position: relative;
@@ -58,4 +64,60 @@
 .remove-btn:active {
   top: 4px;
   box-shadow: none;
+}
+
+/* Post form */
+.post-form {
+  width: 50%;
+  box-shadow: 0px 0px 5px 0px rgb(71, 68, 68);
+}
+
+.post-form form {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0;
+}
+
+.form-group * {
+  margin: 5px 0;
+}
+
+.post-form input,
+.post-form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid rgb(179, 177, 177);
+  outline: none;
+}
+
+.post-form input:focus,
+.post-form textarea:focus {
+  border: 2px solid rgb(14, 96, 204);
+}
+
+.post-form button {
+  margin-top: 20px;
+  width: 110px;
+  padding: 9px 20px;
+  border-radius: 6px;
+  border: 1px solid rgb(14, 96, 204);
+  color: rgb(14, 96, 204);
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.post-form button:hover {
+  background-color: rgb(14, 96, 204);
+  color: white;
+}
+
+.post-form label {
+  font-weight: 500;
 }
