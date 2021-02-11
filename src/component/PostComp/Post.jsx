@@ -8,8 +8,14 @@ const Post = (props) => {
         <img src="https://placeimg.com/200/150/tech" alt="Dummy Image" />
       </div>
       <div className="content">
-        <h5 className="title">{props.title}</h5>
-        <p className="body">{props.body}</p>
+        <h5 className="title">{props.data.title}</h5>
+        <p className="body">{props.data.body}</p>
+        <button
+          className="remove-btn"
+          onClick={() => props.remove(props.data.id)}
+        >
+          remove
+        </button>
       </div>
     </div>
   );
