@@ -1,5 +1,5 @@
 import React from "react";
-import pic from "../Product/img/pic.jpg";
+import pic from "../img/pic.jpg";
 
 class CardProduct extends React.Component {
   state = {

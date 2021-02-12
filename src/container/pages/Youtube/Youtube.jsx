@@ -1,5 +1,5 @@
 import React from "react";
-import YoutubeComp from "../../component/YoutubeComp/YoutubeComp";
+import YoutubeComp from "../../../component/YoutubeComp/YoutubeComp";
 
 class Youtube extends React.Component {
   render() {

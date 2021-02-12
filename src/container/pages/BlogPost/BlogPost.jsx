@@ -1,6 +1,6 @@
 import React from "react";
 import "./BlogPost.css";
-import Post from "../../component/PostComp/Post";
+import Post from "../../../component/PostComp/Post";
 import axios from "axios";
 
 class BlogPost extends React.Component {
