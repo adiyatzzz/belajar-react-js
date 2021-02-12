@@ -10,10 +10,16 @@ const Post = (props) => {
         <h5 className="title">{props.data.title}</h5>
         <p className="body">{props.data.body}</p>
         <button
-          className="remove-btn"
+          className="btn update-btn"
+          onClick={() => props.update(props.data)}
+        >
+          Update
+        </button>
+        <button
+          className="btn remove-btn"
           onClick={() => props.remove(props.data.id)}
         >
-          remove
+          Remove
         </button>
       </div>
     </div>
