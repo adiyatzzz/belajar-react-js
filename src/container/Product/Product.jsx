@@ -15,7 +15,7 @@ class Product extends Component {
   render() {
     return (
       <Fragment>
-        <div className="container">
+        <div className="container-product">
           <div className="header">
             <div className="logo">
               <h2>Lonte mart</h2>

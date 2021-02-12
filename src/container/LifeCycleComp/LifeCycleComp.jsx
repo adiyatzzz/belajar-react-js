@@ -54,7 +54,7 @@ class LifeCycleComp extends React.Component {
   render() {
     console.log("render");
     return (
-      <div>
+      <div className="container">
         <h2>Life Cycle</h2>
         <hr />
         <button className="btn" onClick={() => this.changeCount()}>

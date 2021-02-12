@@ -1,13 +1,15 @@
 import React from "react";
-// import YoutubeComp from "../../component/YoutubeComp/YoutubeComp";
-// import Product from "../Product/Product";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Product from "../Product/Product";
 import LifeCycle from "../LifeCycleComp/LifeCycleComp";
 import BlogPost from "../BlogPost/BlogPost";
+import Youtube from "../Youtube/Youtube";
+import "./Home.css";
 
 class Home extends React.Component {
-  state = {
-    showComponent: true,
-  };
+  // state = {
+  //   showComponent: true,
+  // };
 
   // componentDidMount() {
   //   setTimeout(() => {
@@ -19,28 +21,32 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className="flex-col">
-        {/* <h2>Youtube Video</h2>
-        <hr />
-        <YoutubeComp
-          title="Utuh Hamuk"
-          desc="Utuh lagi mahamuk"
-          img="thumb-1.jpg"
-        />
-        <YoutubeComp time="3.12" title="Utuh Tegang" desc="Utuh lagi tegang" />
-        <YoutubeComp
-          time="11.11"
-          title="Utuh Liar"
-          desc="Utuh lagi liar liar nya"
-        />
-        <YoutubeComp time="12.12" title="Utuh Liut" desc="Utuh lagi lamas" />
-
-        <hr /> 
-
-        {this.state.showComponent ? <LifeCycle /> : null}
-        */}
-        <BlogPost />
-      </div>
+      <Router>
+        <div className="flex-col">
+          <nav>
+            <div className="container">
+              <Link to="/">Blog Post</Link>
+              <Link to="/youtube">Youtube</Link>
+              <Link to="/product">Product</Link>
+              <Link to="/lifecycle">Life Cycle</Link>
+            </div>
+          </nav>
+          <Switch>
+            <Route path="/" exact>
+              <BlogPost />
+            </Route>
+            <Route path="/youtube">
+              <Youtube />
+            </Route>
+            <Route path="/product">
+              <Product />
+            </Route>
+            <Route path="/lifecycle">
+              <LifeCycle />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
