@@ -4,12 +4,12 @@
   display: inline-block;
 }
 
-.img-thumb {
+.yt-img-thumb {
   width: 100%;
   position: relative;
 }
 
-.img-thumb img {
+.yt-img-thumb img {
   width: 100%;
 }
 

@@ -2,6 +2,7 @@ import React from "react";
 import "./BlogPost.css";
 import Post from "../../../component/PostComp/Post";
 import axios from "axios";
+import { withRouter } from "react-router-dom";
 
 class BlogPost extends React.Component {
   state = {
@@ -14,7 +15,6 @@ class BlogPost extends React.Component {
     },
     isUpdate: false,
   };
-
   myRef = React.createRef();
 
   getPostAPI = () => {
@@ -99,6 +99,10 @@ class BlogPost extends React.Component {
     }
   };
 
+  handleDetail = (id) => {
+    this.props.history.push(`/post/${id}`);
+  };
+
   emptyForm = () => {
     document.getElementById("title").value = "";
     document.getElementById("body").value = "";
@@ -174,6 +178,7 @@ class BlogPost extends React.Component {
                 data={post}
                 remove={this.handleRemove}
                 update={this.handleUpdate}
+                goDetail={this.handleDetail}
               />
             );
           })}
@@ -183,4 +188,4 @@ class BlogPost extends React.Component {
   }
 }
 
-export default BlogPost;
+export default withRouter(BlogPost);

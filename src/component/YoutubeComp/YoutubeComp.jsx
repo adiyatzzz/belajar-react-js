@@ -5,7 +5,7 @@ const YoutubeComp = (props) => {
   // const img = require("./media/thumb-3.jpg");
   return (
     <div className="youtube-wrapper">
-      <div className="img-thumb">
+      <div className="yt-img-thumb">
         <img src={img} alt="thumbnail" />
         <p className="time">{props.time}</p>
       </div>

@@ -33,3 +33,11 @@ nav a:hover::after {
 nav a:active::after {
   margin-top: 10px;
 }
+
+nav a.active {
+  color: rgb(201, 200, 200);
+}
+
+nav a.active::after {
+  border-bottom: 1px solid rgb(201, 200, 200);
+}
