@@ -4,21 +4,22 @@ import "./index.css";
 // import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Home from "./container/Home/Home";
-import { createStore } from "redux";
-import { Provider } from "react-redux";
+// import { createStore } from "redux";
+// import { Provider } from "react-redux";
 
-// reducer
-import rootReducer from "./redux/reducer/globalReducer";
+// // reducer
+// import rootReducer from "./redux/reducer/globalReducer";
 
 // store
-const storeRedux = createStore(rootReducer);
+// const storeRedux = createStore(rootReducer);
 
-ReactDOM.render(
-  <Provider store={storeRedux}>
-    <Home />
-  </Provider>,
-  document.getElementById("root")
-);
+// ReactDOM.render(
+//   <Provider store={storeRedux}>
+//     <Home />
+//   </Provider>,
+//   document.getElementById("root")
+// );
+ReactDOM.render(<Home />, document.getElementById("root"));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

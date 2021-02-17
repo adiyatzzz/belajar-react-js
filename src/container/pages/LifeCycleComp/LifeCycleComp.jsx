@@ -74,4 +74,5 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(LifeCycleComp);
+// export default connect(mapStateToProps)(LifeCycleComp);
+export default LifeCycleComp;

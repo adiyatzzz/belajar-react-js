@@ -4,7 +4,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   NavLink,
 } from "react-router-dom";
 
@@ -18,45 +17,53 @@ import Post from "../pages/BlogPost/Post/Post";
 // css
 import "./Home.css";
 
+export const RootContext = React.createContext();
+const Provider = RootContext.Provider;
 class Home extends React.Component {
+  state = {
+    totalOrder: 1,
+  };
+
   render() {
     return (
       <Router>
-        <div className="flex-col">
-          <nav>
-            <div className="container">
-              <NavLink to="/" activeClassName="active" exact>
-                Blog Post
-              </NavLink>
-              <NavLink to="/youtube" activeClassName="active">
-                Youtube
-              </NavLink>
-              <NavLink to="/product" activeClassName="active">
-                Product
-              </NavLink>
-              <NavLink to="/lifecycle" activeClassName="active">
-                Life Cycle
-              </NavLink>
-            </div>
-          </nav>
-          <Switch>
-            <Route path="/" exact>
-              <BlogPost />
-            </Route>
-            <Route path="/post/:postID">
-              <Post />
-            </Route>
-            <Route path="/youtube">
-              <Youtube />
-            </Route>
-            <Route path="/product">
-              <Product />
-            </Route>
-            <Route path="/lifecycle">
-              <LifeCycle />
-            </Route>
-          </Switch>
-        </div>
+        <Provider value={this.state}>
+          <div className="flex-col">
+            <nav>
+              <div className="container">
+                <NavLink to="/" activeClassName="active" exact>
+                  Blog Post
+                </NavLink>
+                <NavLink to="/youtube" activeClassName="active">
+                  Youtube
+                </NavLink>
+                <NavLink to="/product" activeClassName="active">
+                  Product
+                </NavLink>
+                <NavLink to="/lifecycle" activeClassName="active">
+                  Life Cycle
+                </NavLink>
+              </div>
+            </nav>
+            <Switch>
+              <Route path="/" exact>
+                <BlogPost />
+              </Route>
+              <Route path="/post/:postID">
+                <Post />
+              </Route>
+              <Route path="/youtube">
+                <Youtube />
+              </Route>
+              <Route path="/product">
+                <Product />
+              </Route>
+              <Route path="/lifecycle">
+                <LifeCycle />
+              </Route>
+            </Switch>
+          </div>
+        </Provider>
       </Router>
     );
   }
