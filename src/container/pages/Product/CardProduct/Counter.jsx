@@ -1,5 +1,5 @@
 import React from "react";
-
+import { connect } from "react-redux";
 class Counter extends React.Component {
   state = {
     cart: 4,
@@ -24,12 +24,13 @@ class Counter extends React.Component {
     );
   };
   render() {
+    console.log(this.props);
     return (
       <div className="counter">
         <button className="minus" onClick={() => this.handleMinus()}>
           -
         </button>
-        <input type="text" value={this.state.cart} />
+        <input type="text" value={this.props.cart} />
         <button className="plus" onClick={() => this.handlePlus()}>
           +
         </button>
@@ -38,4 +39,10 @@ class Counter extends React.Component {
   }
 }
 
-export default Counter;
+const mapStateToProps = (state) => {
+  return {
+    cart: state.totalOrder,
+  };
+};
+
+export default connect(mapStateToProps)(Counter);
