@@ -2,15 +2,16 @@ import { React, Component, Fragment } from "react";
 import "./Product.css";
 import cart from "./img/icon/shopping-cart.svg";
 import Card from "./CardProduct/CardProduct";
+import { connect } from "react-redux";
 
 class Product extends Component {
-  state = {
-    cart: 4,
-  };
+  // state = {
+  //   cart: 4,
+  // };
 
-  onCounterChange(newValue) {
-    this.setState({ cart: newValue });
-  }
+  // onCounterChange(newValue) {
+  //   this.setState({ cart: newValue });
+  // }
 
   render() {
     return (
@@ -22,16 +23,20 @@ class Product extends Component {
             </div>
             <div className="troley">
               <img src={cart} alt="cart" />
-              <div className="count">{this.state.cart}</div>
+              <div className="count">{this.props.cart}</div>
             </div>
           </div>
-          <Card
-            onCounterChange={(newValue) => this.onCounterChange(newValue)}
-          />
+          <Card />
         </div>
       </Fragment>
     );
   }
 }
 
-export default Product;
+const mapStateToProps = (state) => {
+  return {
+    cart: state.totalOrder,
+  };
+};
+
+export default connect(mapStateToProps)(Product);

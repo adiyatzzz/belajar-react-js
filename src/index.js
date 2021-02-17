@@ -13,7 +13,29 @@ const globalState = {
 
 // reducer
 const rootReducer = (state = globalState, action) => {
-  return state;
+  switch (action.type) {
+    case "PLUS_ORDER":
+      return {
+        ...state,
+        totalOrder: state.totalOrder + 1,
+      };
+      break;
+
+    case "MIN_ORDER":
+      // minimum totalOrder value
+      let totalOrder = 0;
+      if (state.totalOrder > 0) {
+        totalOrder = state.totalOrder - 1;
+      }
+      return {
+        ...state,
+        totalOrder: totalOrder,
+      };
+      break;
+    default:
+      return state;
+      break;
+  }
 };
 
 // store

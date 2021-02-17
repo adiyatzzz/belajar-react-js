@@ -10,9 +10,7 @@ class CardProduct extends React.Component {
         </div>
         <p className="product-title">Daging Ayam Rasa Babi</p>
         <p className="product-price">Rp. 50,000</p>
-        <Counter
-          onCounterChange={(value) => this.props.onCounterChange(value)}
-        />
+        <Counter />
       </div>
     );
   }

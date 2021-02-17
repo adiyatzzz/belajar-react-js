@@ -1,5 +1,6 @@
 import React from "react";
 import "./LifeCycleComp.css";
+import { connect } from "react-redux";
 
 class LifeCycleComp extends React.Component {
   constructor(props) {
@@ -60,9 +61,17 @@ class LifeCycleComp extends React.Component {
         <button className="btn" onClick={() => this.changeCount()}>
           Component Btn {this.state.count}
         </button>
+        <hr />
+        <p>Total Order : {this.props.cart}</p>
       </div>
     );
   }
 }
 
-export default LifeCycleComp;
+const mapStateToProps = (state) => {
+  return {
+    cart: state.totalOrder,
+  };
+};
+
+export default connect(mapStateToProps)(LifeCycleComp);
