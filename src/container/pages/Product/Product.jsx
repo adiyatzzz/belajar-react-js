@@ -18,7 +18,6 @@ class Product extends Component {
     return (
       <RootContext.Consumer>
         {(value) => {
-          console.log(value);
           return (
             <Fragment>
               <div className="container-product">
@@ -28,7 +27,7 @@ class Product extends Component {
                   </div>
                   <div className="troley">
                     <img src={cart} alt="cart" />
-                    <div className="count">{value.totalOrder}</div>
+                    <div className="count">{value.state.totalOrder}</div>
                   </div>
                 </div>
                 <Card />

@@ -1,6 +1,7 @@
 import React from "react";
 import "./LifeCycleComp.css";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
+import { RootContext } from "../../Home/Home";
 
 class LifeCycleComp extends React.Component {
   constructor(props) {
@@ -55,15 +56,21 @@ class LifeCycleComp extends React.Component {
   render() {
     console.log("render");
     return (
-      <div className="container">
-        <h2>Life Cycle</h2>
-        <hr />
-        <button className="btn" onClick={() => this.changeCount()}>
-          Component Btn {this.state.count}
-        </button>
-        <hr />
-        <p>Total Order : {this.props.cart}</p>
-      </div>
+      <RootContext.Consumer>
+        {(value) => {
+          return (
+            <div className="container">
+              <h2>Life Cycle</h2>
+              <hr />
+              <button className="btn" onClick={() => this.changeCount()}>
+                Component Btn {this.state.count}
+              </button>
+              <hr />
+              <p>Total Order : {value.state.totalOrder}</p>
+            </div>
+          );
+        }}
+      </RootContext.Consumer>
     );
   }
 }

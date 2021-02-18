@@ -21,13 +21,35 @@ export const RootContext = React.createContext();
 const Provider = RootContext.Provider;
 class Home extends React.Component {
   state = {
-    totalOrder: 1,
+    totalOrder: 0,
+  };
+
+  dispatch = (action) => {
+    switch (action.type) {
+      case "PLUS_ORDER":
+        return this.setState({ totalOrder: this.state.totalOrder + 1 });
+        break;
+
+      case "MIN_ORDER":
+        if (this.state.totalOrder == 0) break;
+        return this.setState({ totalOrder: this.state.totalOrder - 1 });
+        break;
+
+      default:
+        return null;
+        break;
+    }
   };
 
   render() {
     return (
       <Router>
-        <Provider value={this.state}>
+        <Provider
+          value={{
+            state: this.state,
+            dispatch: this.dispatch,
+          }}
+        >
           <div className="flex-col">
             <nav>
               <div className="container">
