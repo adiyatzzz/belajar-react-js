@@ -2,6 +2,7 @@ import React from "react";
 import "./BlogPost.css";
 import Post from "../../../component/PostComp/Post";
 import axios from "axios";
+import API from "../../../services";
 import { withRouter } from "react-router-dom";
 
 class BlogPost extends React.Component {
@@ -18,11 +19,14 @@ class BlogPost extends React.Component {
   myRef = React.createRef();
 
   getPostAPI = () => {
-    axios
-      .get("http://localhost:3004/posts?_sort=id&_order=desc")
-      .then((response) => {
-        this.setState({ post: response.data });
-      });
+    API.getNewsBlog().then((result) => {
+      this.setState({ post: result });
+    });
+    // axios
+    //   .get("http://localhost:3004/posts?_sort=id&_order=desc")
+    //   .then((response) => {
+    //     this.setState({ post: response.data });
+    //   });
   };
 
   postDataToAPI = () => {
