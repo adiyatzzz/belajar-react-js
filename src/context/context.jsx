@@ -4,7 +4,7 @@ const RootContext = React.createContext();
 
 // Provider
 const Provider = RootContext.Provider;
-const GlobalProvider = (Children) => {
+export const GlobalProvider = (Children) => {
   return class ParentComp extends React.Component {
     state = {
       totalOrder: 0,
@@ -41,6 +41,18 @@ const GlobalProvider = (Children) => {
   };
 };
 
-export default GlobalProvider;
-
 // Consumer
+const Consumer = RootContext.Consumer;
+export const GlobalConsumer = (Children) => {
+  return class ParentConsumer extends React.Component {
+    render() {
+      return (
+        <Consumer>
+          {(value) => {
+            return <Children {...this.props} {...value} />;
+          }}
+        </Consumer>
+      );
+    }
+  };
+};

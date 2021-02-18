@@ -6,7 +6,7 @@ import {
   Route,
   NavLink,
 } from "react-router-dom";
-import GlobalProvider from "../../context/context";
+import { GlobalProvider } from "../../context/context";
 
 // pages
 import Product from "../pages/Product/Product";
